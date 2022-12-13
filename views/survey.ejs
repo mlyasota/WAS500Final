@@ -1,0 +1,57 @@
+<form>
+    <!-- https://www.w3schools.com/tags/tag_form.asp
+    https://www.w3schools.com/html/html_form_input_types.asp -->
+    <div class="name">
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+    </div>
+    <div class="dob">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" required>
+    </div>
+    <div class="recommend">
+        <label>
+            How likely is
+            it that you
+            recommend
+            this library to
+            your friends?
+        </label>
+        <div class="radio_buttons">
+            <!-- https://stackoverflow.com/questions/8287779/how-to-use-the-required-attribute-with-a-radio-input-field -->
+            <!-- https://userway.org/blog/html-required-versus-aria-required/ -->
+            <div class="wrapper" >
+                <div style="position: relative;">
+                    <input type="radio" id="Very likely" name="recommendation" value="Very likely" required>
+                    <label for="Very likely">
+                        <div style="margin-left:30px; margin-top:-20px; width:20px;">
+                            Very likely
+                        </div>
+                    </label>
+                </div>
+
+                <div style="position:relative; margin-left:20px">
+                    <input type="radio" id="somewhat likely" name="recommendation" value="somewhat likely"
+                        required>
+                    <label for="somewhat likely">
+                        <div style="margin-left:30px; margin-top:-20px; width:20px;">
+                            somewhat likely
+                        </div>
+                    </label>
+                </div>
+
+                <div style="position:relative; margin-left:50px">
+                    <input type="radio" id="Not likely" name="recommendation" value="Not likely" required>
+                    <label for="Not likely">
+                        <div style="margin-left:30px; margin-top:-20px; width:20px;">
+                            Not likely
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left:93px; margin-top:80px;">
+        <input type="submit" value="            Submit             ">
+    </div>
+</form>

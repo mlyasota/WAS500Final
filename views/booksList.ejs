@@ -1,0 +1,23 @@
+<!-- <h1>Welcome to the books page.</h1> -->
+<ul style="list-style-type:None; line-height: 50px;">
+<!--https://www.w3schools.com/tags/tag_ul.asp-->
+<% books.forEach(s=> 
+    { %>
+        <li>
+            <div class="wrapper">
+                <a href="books/<%= s._id %>">
+                    <!-- <img src="/images/<%= s.isbn_13 %>.jpg" alt="img" width="" height=300px /> -->
+                    <img src="/images/<%= s.isbn_13 %>.jpg" alt="img" onerror="this.src='/images/missing.jpg'" width="" height=300px />    <!-- https://stackoverflow.com/questions/3984287/how-to-show-alternate-image-if-source-image-is-not-found-onerror-working-in-ie -->
+                </a>
+                <div class="book_name">
+                    <a href="books/<%= s._id %>">
+                        <h3><%= s.name %></h3>
+                    </a>
+                </div>
+            </div>
+        </li>
+
+        <!-- <hr/> -->
+    <% });  
+%>
+</ul>

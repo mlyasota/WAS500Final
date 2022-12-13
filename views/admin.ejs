@@ -1,0 +1,29 @@
+<table style="border-style: double; border-color: #8c8273;">
+    <tr>
+      <th style="border: 1px double #8c8273;">id</th>
+      <th style="border: 1px double #8c8273;">name</th>
+      <th style="border: 1px double #8c8273;">author</th>
+      <th style="border: 1px double #8c8273;">Edit</th>
+      <th style="border: 1px double #8c8273;">Delete</th>
+    </tr>
+<% books.forEach(s=> 
+    { %>
+    <tr>
+      <td style="border: 1px solid #8c8273;"><%= s._id %></td>
+      <td style="border: 1px solid #8c8273;"><%= s.name %></td>
+      <td style="border: 1px solid #8c8273;"><%= s.author %></td>
+      <th style="border: 1px solid #8c8273;"><a href="/edit/<%= s._id %>"><button>✏️</button></a></th>
+      <th style="border: 1px solid #8c8273;"><button onclick="deleteBook(id=`<%= s._id %>`, name=`<%= s.name %>`)">❌</button></th>
+    </tr>
+    <% });  
+%>
+<script>
+  function deleteBook(id, name) {
+    // https://www.w3schools.com/JSREF/met_win_confirm.asp
+    if (confirm(`Are you sure you want to delete?\n\n_id: ${id}\nname: ${name}`) == true) {
+      window.location.href = `/deleteBook/${id}`; // https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
+      //TODO: add method so only authorized users have access to delete
+    }
+  };
+</script>
+</table> 

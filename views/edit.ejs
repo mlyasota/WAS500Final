@@ -1,0 +1,32 @@
+<form method="POST" action="/edit/updateBook/<%= bookID._id %>">
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name" value="<%= bookID.name %>" size="50" required><br>
+    ISBN-13: <%= bookID.isbn_13 %><br>
+    ISBN-10: <%= bookID.isbn_10 %><br>
+    <label for="author">Author: </label>
+    <input type="text" name="author" id="author" value="<%= bookID.author %>" required><br>
+    Edition: <%= bookID.edition %><br>
+    Binding: <%= bookID.binding %><br>
+    Publisher: <%= bookID.publisher %><br>
+    <!-- <li>Published: <%= bookID.published %></li> --> 
+    <% <!-- https://amjustsam.medium.com/how-to-format-mongoose-crappy-date-10df67d7a2d6 -->
+    try {
+        var monthNames = [
+                'January', 'February', 'March',
+                'April', 'May', 'June', 'July',
+                'August', 'September', 'October',
+                'November', 'December'
+            ];
+        var d = bookID.published.getDate();
+        var m = monthNames[bookID.published.getMonth()];
+        var y = bookID.published.getFullYear();
+    } 
+    catch(err) { //catch exception for when published date does not exist
+        var d = '';
+        var m = '';
+        var y = '';
+    }
+    %>
+    Published: <%= m+ ` ` +y %><br><br>
+    <input type="submit" value="            Save💾            ">
+</form>

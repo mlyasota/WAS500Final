@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "http-status-codes": "^2.2.0",
+    "mongoose": "^6.8.0"
+  },
+  "name": "assignment4",
+  "version": "1.0.0",
+  "description": "assignment4",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlyasota/WAS500.git"
+  },
+  "author": "Maxim Lyasota",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mlyasota/WAS500/issues"
+  },
+  "homepage": "https://github.com/mlyasota/WAS500#readme"
+}
